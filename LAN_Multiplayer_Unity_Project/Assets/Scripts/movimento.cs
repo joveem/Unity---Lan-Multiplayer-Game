@@ -6,9 +6,11 @@ using UnityEngine.Networking;
 public class movimento : NetworkBehaviour
 {
     public bool vivo = true, pausado = false, cursor_travado = true;
-    public float velocidade = 5, sensi_velocidade = 5, angulo_visao_y;
+    public float velocidade = 5, sensi_velocidade = 5, sens_rot = 30, angulo_visao_y;
 
     public float velx, velesq, veldir, velz, velfre, veltra;
+
+    public GameObject player_pivot, bullet, bullet_cannon;
 
     public Quaternion rotacao;
     // Start is called before the first frame update
@@ -81,6 +83,10 @@ public class movimento : NetworkBehaviour
                 velz = velfre + veltra;
 
                 transform.Translate(velx * velocidade * Time.deltaTime, 0, velz * velocidade * Time.deltaTime);
+
+                angulo_visao_y = Input.GetAxis("Mouse X");
+
+                player_pivot.transform.Rotate(0,angulo_visao_y * Time.deltaTime * sens_rot,0);
 
             }
         }
