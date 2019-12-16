@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gerenciador : MonoBehaviour
+public class game_manager : MonoBehaviour
 {
-    static public gerenciador instancia;
-    public movimento mov_jog;
+    static public game_manager instancia;
+    public movement mov_jog;
     public bool pausado;
     public GameObject menu_pausa;
     // Start is called before the first frame update
 
-    void Awake(){
+    void Awake()
+    {
         instancia = this;
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,25 +26,32 @@ public class gerenciador : MonoBehaviour
         {
             alternarTravamentoDeMouse();
         }
-    }
 
-    
-
-    public void alternarTravamentoDeMouse()
-    {
-        if (!pausado)
+        if (pausado)
         {
             menu_pausa.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-            pausado = !pausado;
-            mov_jog.pausado = !mov_jog.pausado;
+            
+            if(mov_jog != null){
+                mov_jog.pausado = false;
+            }
         }
         else
         {
             menu_pausa.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
-            pausado = !pausado;
-            mov_jog.pausado = !mov_jog.pausado;
+            
+            if(mov_jog != null){
+                mov_jog.pausado = false;
+            }
+            
         }
+    }
+
+
+
+    public void alternarTravamentoDeMouse()
+    {
+        pausado = !pausado;
     }
 }

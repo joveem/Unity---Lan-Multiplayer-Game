@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3723877571634204099}
   - component: {fileID: 8821062938473046898}
   - component: {fileID: 3964255559951165372}
+  - component: {fileID: 8484051953049131595}
   m_Layer: 0
   m_Name: player_01
   m_TagString: Untagged
@@ -128,7 +129,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &8821062938473046898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +181,26 @@ MonoBehaviour:
   bullet: {fileID: 5759330958409804611, guid: 97814b3d006566c45b115e3463cdd991, type: 3}
   bullet_cannon: {fileID: 1119768300825520985}
   rotacao: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8484051953049131595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38245071142225796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 1119768301981878593}
+  m_ChildIndex: 0
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!1 &1119768300825520985
 GameObject:
   m_ObjectHideFlags: 0
